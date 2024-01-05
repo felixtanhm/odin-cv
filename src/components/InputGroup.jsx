@@ -3,12 +3,7 @@ function Input({ id, type, labelText, subtext, placeholder, value, onChange }) {
     <div className="input-group">
       <label htmlFor={id}>
         <span className="label-text">{labelText}</span>
-        {subtext === "optional" && (
-          <span className="optional-text">{subtext}</span>
-        )}
-        {subtext === "recommended" && (
-          <span className="recommended-text">{subtext}</span>
-        )}
+        {subtext && <span className="sub-text">{subtext}</span>}
       </label>
 
       {type === "textarea" ? (

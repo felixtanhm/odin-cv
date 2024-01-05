@@ -2,7 +2,8 @@ import Input from "./InputGroup";
 
 function PersonalDetails({ name, email, phone, address, onChange }) {
   return (
-    <>
+    <div className="card">
+      <h1>Personal Details</h1>
       <Input
         id="name"
         type="input"
@@ -18,6 +19,7 @@ function PersonalDetails({ name, email, phone, address, onChange }) {
         placeholder="john@google.com"
         value={email}
         onChange={onChange}
+        subtext="recommended"
       />
       <Input
         id="phone"
@@ -26,6 +28,7 @@ function PersonalDetails({ name, email, phone, address, onChange }) {
         placeholder=""
         value={phone}
         onChange={onChange}
+        subtext="recommended"
       />
       <Input
         id="address"
@@ -34,8 +37,9 @@ function PersonalDetails({ name, email, phone, address, onChange }) {
         placeholder="1 Parliament Drive"
         value={address}
         onChange={onChange}
+        subtext="recommended"
       />
-    </>
+    </div>
   );
 }
 

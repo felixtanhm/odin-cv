@@ -1,7 +1,7 @@
 import { useState } from "react";
 import templateData from "./templateData";
 import PersonalDetails from "./components/PersonalDetails";
-import "./App.css";
+// import "./App.css";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState(
@@ -9,7 +9,6 @@ function App() {
   );
 
   function handlePersonalDetailsChange(e) {
-    console.log(e.target.id);
     const key = e.target.id;
     setPersonalDetails({ ...personalDetails, [key]: e.target.value });
   }
