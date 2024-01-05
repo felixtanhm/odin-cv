@@ -1,6 +1,7 @@
 import { useState } from "react";
 import templateData from "./templateData";
 import PersonalDetails from "./components/PersonalDetails";
+import PersonalDetailsDisplay from "./components/PersonalDetailsDisplay";
 // import "./App.css";
 
 function App() {
@@ -15,13 +16,25 @@ function App() {
 
   return (
     <>
-      <PersonalDetails
-        name={personalDetails.name}
-        email={personalDetails.email}
-        phone={personalDetails.phone}
-        address={personalDetails.address}
-        onChange={handlePersonalDetailsChange}
-      />
+      <div id="form">
+        <PersonalDetails
+          name={personalDetails.name}
+          email={personalDetails.email}
+          github={personalDetails.github}
+          linkedin={personalDetails.linkedin}
+          location={personalDetails.location}
+          onChange={handlePersonalDetailsChange}
+        />
+      </div>
+      <div id="resume-display">
+        <PersonalDetailsDisplay
+          name={personalDetails.name}
+          email={personalDetails.email}
+          github={personalDetails.github}
+          linkedin={personalDetails.linkedin}
+          location={personalDetails.location}
+        />
+      </div>
     </>
   );
 }

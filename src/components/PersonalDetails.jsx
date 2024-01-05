@@ -1,6 +1,13 @@
 import Input from "./InputGroup";
 
-function PersonalDetails({ name, email, phone, address, onChange }) {
+function PersonalDetails({
+  name,
+  email,
+  github,
+  linkedin,
+  location,
+  onChange,
+}) {
   return (
     <div className="card">
       <h1>Personal Details</h1>
@@ -22,20 +29,29 @@ function PersonalDetails({ name, email, phone, address, onChange }) {
         subtext="recommended"
       />
       <Input
-        id="phone"
+        id="github"
         type="input"
-        labelText="Phone"
-        placeholder=""
-        value={phone}
+        labelText="Github"
+        placeholder="https://github.com/yourusername"
+        value={github}
         onChange={onChange}
         subtext="recommended"
       />
       <Input
-        id="address"
+        id="linkedin"
+        type="input"
+        labelText="LinkedIn"
+        placeholder="https://linkedin.com/in/yourusername"
+        value={linkedin}
+        onChange={onChange}
+        subtext="recommended"
+      />
+      <Input
+        id="location"
         type="textarea"
-        labelText="Address"
-        placeholder="1 Parliament Drive"
-        value={address}
+        labelText="Location"
+        placeholder="Tokyo, Japan"
+        value={location}
         onChange={onChange}
         subtext="recommended"
       />

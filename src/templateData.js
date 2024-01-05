@@ -1,9 +1,10 @@
 const templateData = {
   personalDetails: {
-    name: "John Doe",
-    email: "john@google.com",
-    phone: "+1 234 5678",
-    address: "Tokyo, Japan",
+    name: "Felix Tan",
+    email: "felixtanhm@gmail.com",
+    github: "https://github.com/felixtanhm",
+    linkedin: "https://linkedin.com/felixtanhm",
+    location: "Remote / Singapore",
   },
 };
 

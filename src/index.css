@@ -31,8 +31,6 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
 }
 
 /*
@@ -78,10 +76,32 @@ h6 {
   isolation: isolate;
 }
 
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
 .card {
   border: 2px solid black;
   border-radius: 4px;
   padding: 20px;
+}
+
+#resume-display {
+  border: 1px solid black;
+  padding: 20px;
+  width: 50%;
+}
+
+#contact-display {
+  display: flex;
+  font-size: 10px;
+  gap: 4px;
+}
+
+#contact-display > p > span {
+  font-weight: 600;
 }
 
 @media (prefers-color-scheme: light) {
