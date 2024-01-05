@@ -48,7 +48,7 @@ function PersonalDetails({
       />
       <Input
         id="location"
-        type="textarea"
+        type="input"
         labelText="Location"
         placeholder="Tokyo, Japan"
         value={location}

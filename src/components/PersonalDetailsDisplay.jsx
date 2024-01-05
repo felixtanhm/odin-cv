@@ -3,22 +3,30 @@ function PersonalDetailsDisplay({ name, email, github, linkedin, location }) {
     <div className="display">
       <h1>{name}</h1>
       <div id="contact-display">
-        <p>
-          <span>Contact: </span>
-          {email}
-        </p>
-        <p>
-          <span>Github: </span>
-          {github}
-        </p>
-        <p>
-          <span>LinkedIn: </span>
-          {linkedin}
-        </p>
-        <p>
-          <span>Location: </span>
-          {location}
-        </p>
+        {email && (
+          <p>
+            <span>Contact: </span>
+            {email}
+          </p>
+        )}
+        {github && (
+          <p>
+            <span>Github: </span>
+            {github}
+          </p>
+        )}
+        {linkedin && (
+          <p>
+            <span>LinkedIn: </span>
+            {linkedin}
+          </p>
+        )}
+        {location && (
+          <p>
+            <span>Location: </span>
+            {location}
+          </p>
+        )}
       </div>
     </div>
   );
