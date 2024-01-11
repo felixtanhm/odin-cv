@@ -1,3 +1,4 @@
+import FormCard from "./FormCard";
 import Input from "./InputGroup";
 
 function PersonalDetails({
@@ -9,8 +10,7 @@ function PersonalDetails({
   onChange,
 }) {
   return (
-    <div className="card">
-      <h1>Personal Details</h1>
+    <FormCard type="Personal Details">
       <Input
         id="name"
         type="input"
@@ -55,7 +55,7 @@ function PersonalDetails({
         onChange={onChange}
         subtext="recommended"
       />
-    </div>
+    </FormCard>
   );
 }
 
