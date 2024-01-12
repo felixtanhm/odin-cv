@@ -1,4 +1,12 @@
-function Input({ id, type, labelText, subtext, placeholder, value, onChange }) {
+function InputGroup({
+  id,
+  type,
+  labelText,
+  subtext,
+  placeholder,
+  value,
+  onChange,
+}) {
   return (
     <div className="input-group">
       <label htmlFor={id}>
@@ -26,4 +34,4 @@ function Input({ id, type, labelText, subtext, placeholder, value, onChange }) {
   );
 }
 
-export default Input;
+export default InputGroup;

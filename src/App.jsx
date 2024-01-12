@@ -1,77 +1,32 @@
 import { useState } from "react";
+import Profile from "./components/Profile";
 import templateData from "./templateData";
-import PersonalDetails from "./components/PersonalDetails";
-import PersonalDetailsDisplay from "./components/PersonalDetailsDisplay";
-import NewItemForm from "./components/NewItemForm";
-import WorkExperience from "./components/WorkExperience";
-// import "./App.css";
 
 function App() {
-  const [personalDetails, setPersonalDetails] = useState(
-    templateData.personalDetails
-  );
-  const [pendingItem, setPendingItem] = useState(null);
-  console.log(pendingItem);
-  const [workExperiences, setWorkExperiences] = useState(
-    templateData.workExperiences
-  );
-  console.log(workExperiences);
+  const [profile, setProfile] = useState(templateData.profile);
+  const [educationList, setEducationList] = useState([]);
+  const [workList, setWorkList] = useState([]);
+  const [activeForm, setActiveForm] = useState(null);
 
-  function handlePersonalDetailsChange(e) {
-    const key = e.target.id;
-    setPersonalDetails({ ...personalDetails, [key]: e.target.value });
+  function editForm(e) {
+    const formId = e.target.value;
+    setActiveForm(formId);
   }
 
-  function createWorkExperiences() {
-    setWorkExperiences([
-      ...workExperiences,
-      { ...pendingItem, id: workExperiences.length },
-    ]);
-  }
-
-  function updateWorkExperiences(e) {
-    // Update workExperience object currently in list of work experiences
-  }
-  function deleteWorkExperiences(e) {
-    // Remove workExperience object currently in list of work experiences
-  }
-  function handlePendingItemChange(e) {
-    const key = e.target.id;
-    setPendingItem({ ...pendingItem, [key]: e.target.value });
+  function saveEntry(obj) {
+    setProfile(obj);
+    setActiveForm(null);
   }
 
   return (
-    <>
-      <div id="form">
-        <PersonalDetails
-          name={personalDetails.name}
-          email={personalDetails.email}
-          github={personalDetails.github}
-          linkedin={personalDetails.linkedin}
-          location={personalDetails.location}
-          onChange={handlePersonalDetailsChange}
-        />
-        <WorkExperience
-          workList={templateData.workExperiences}
-          displayForm={pendingItem}
-          toggleDisplay={setPendingItem}
-        ></WorkExperience>
-        <NewItemForm
-          type="work"
-          onChange={handlePendingItemChange}
-          onSave={createWorkExperiences}
-        />
-      </div>
-      <div id="resume-display">
-        <PersonalDetailsDisplay
-          name={personalDetails.name}
-          email={personalDetails.email}
-          github={personalDetails.github}
-          linkedin={personalDetails.linkedin}
-          location={personalDetails.location}
-        />
-      </div>
-    </>
+    <div className="form-section">
+      <Profile
+        profile={profile}
+        isFormActive={activeForm}
+        toggleForm={editForm}
+        saveProfile={saveEntry}
+      ></Profile>
+    </div>
   );
 }
 

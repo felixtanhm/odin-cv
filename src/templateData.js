@@ -1,9 +1,9 @@
 const templateData = {
-  personalDetails: {
-    name: "Felix Tan",
+  profile: {
+    fullName: "Felix Tan",
     email: "felixtanhm@gmail.com",
     github: "https://github.com/felixtanhm",
-    linkedin: "https://linkedin.com/felixtanhm",
+    linkedIn: "https://linkedin.com/felixtanhm",
     location: "Remote / Singapore",
   },
   workExperiences: [

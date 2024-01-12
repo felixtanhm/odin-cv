@@ -1,9 +1,9 @@
 import Input from "./InputGroup";
 
-function NewItemForm({ type, onChange, onSave }) {
+function NewItemForm({ type, onChange, onCancel, onSave }) {
   if (type === "work") {
     return (
-      <div className="card">
+      <>
         <Input
           id="title"
           type="input"
@@ -18,12 +18,13 @@ function NewItemForm({ type, onChange, onSave }) {
           placeholder="Enter company name"
           onChange={onChange}
         />
+        <button onClick={() => onCancel(null)}>Cancel</button>
         <button onClick={onSave}>Save</button>
-      </div>
+      </>
     );
   } else
     return (
-      <div className="card">
+      <>
         <Input
           id="school"
           type="input"
@@ -38,7 +39,9 @@ function NewItemForm({ type, onChange, onSave }) {
           placeholder="Enter degree / field of study"
           onChange={onChange}
         />
-      </div>
+        <button onClick={() => onCancel(null)}>Cancel</button>
+        <button onClick={onSave}>Save</button>
+      </>
     );
 }
 
