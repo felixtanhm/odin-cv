@@ -1,33 +1,39 @@
+import React from "react";
+
 function InputGroup({
-  id,
-  type,
+  name,
   labelText,
   subtext,
   placeholder,
   value,
   onChange,
+  type,
 }) {
+  const reactId = React.useId();
+
   return (
     <div className="input-group">
-      <label htmlFor={id}>
+      <label htmlFor={reactId}>
         <span className="label-text">{labelText}</span>
         {subtext && <span className="sub-text">{subtext}</span>}
       </label>
 
       {type === "textarea" ? (
         <textarea
-          id={id}
+          id={reactId}
+          name={name}
           placeholder={placeholder}
-          onChange={onChange}
           value={value}
+          onChange={onChange}
         ></textarea>
       ) : (
         <input
-          type={type}
-          id={id}
+          id={reactId}
+          name={name}
           placeholder={placeholder}
-          onChange={onChange}
           value={value}
+          onChange={onChange}
+          type={type}
         />
       )}
     </div>

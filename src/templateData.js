@@ -1,4 +1,4 @@
-const templateData = {
+const templateDataold = {
   profile: {
     fullName: "Felix Tan",
     email: "felixtanhm@gmail.com",
@@ -22,6 +22,30 @@ const templateData = {
       description: "Created React, made history",
       startDate: "01/2009",
       endDate: "12/2013",
+    },
+  ],
+};
+
+const templateData = {
+  profile: [
+    {
+      field: "name",
+      default: "Felix Tan",
+      type: "text",
+      placeholder: "Enter your full name.",
+    },
+    {
+      field: "email",
+      default: "felixtanhm@gmail.com",
+      type: "email",
+      placeholder: "Enter your email.",
+    },
+    {
+      field: "github",
+      default: "https://www.github.com/felixtanhm",
+      type: "url",
+      placeholder: "Enter your github url.",
+      subtext: "recommended",
     },
   ],
 };
