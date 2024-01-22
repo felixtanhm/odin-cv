@@ -1,28 +1,24 @@
 import React from "react";
+import templateData from "../../templateData";
 
-function InputGroup({
-  name,
-  labelText,
-  subtext,
-  placeholder,
-  value,
-  onChange,
-  type,
-}) {
+function InputGroup({ name, labelText, value, onChange, type }) {
   const reactId = React.useId();
+  const formFields = templateData[type];
 
   return (
     <div className="input-group">
       <label htmlFor={reactId}>
-        <span className="label-text">{labelText}</span>
-        {subtext && <span className="sub-text">{subtext}</span>}
+        <span className="label-text">{name}</span>
+        {formFields[name]?.subtext && (
+          <span className="sub-text">{formFields[name]?.subtext}</span>
+        )}
       </label>
 
       {type === "textarea" ? (
         <textarea
           id={reactId}
           name={name}
-          placeholder={placeholder}
+          placeholder={formFields[name].placeholder}
           value={value}
           onChange={onChange}
         ></textarea>
@@ -30,10 +26,10 @@ function InputGroup({
         <input
           id={reactId}
           name={name}
-          placeholder={placeholder}
+          placeholder={formFields[name].placeholder}
           value={value}
           onChange={onChange}
-          type={type}
+          type={formFields[name].type}
         />
       )}
     </div>

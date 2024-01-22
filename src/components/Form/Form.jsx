@@ -2,7 +2,13 @@ import React from "react";
 import InputGroup from "../InputGroup";
 import ButtonGroup from "../ButtonGroup";
 
-function Form({ valueObj }) {
+// {
+//   name: "",
+//   email: "",
+//   github: ""
+// }
+
+function Form({ valueObj, type }) {
   const [formValue, setFormValue] = React.useState(valueObj);
   console.log("Form Rendered with Value: ");
   console.log(formValue);
@@ -16,19 +22,27 @@ function Form({ valueObj }) {
     e.preventDefault();
     console.log("Form Submitted: ");
     console.log(formValue);
-    setFormValue({ name: "" });
+    setFormValue({ name: "", email: "" });
+  }
+
+  const fieldsArr = [];
+  for (const property in valueObj) {
+    fieldsArr.push(property);
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <InputGroup
-        name="name"
-        labelText="Name"
-        placeholder="Enter your full name"
-        value={formValue.name}
-        onChange={handleChange}
-        type="text"
-      />
+      {fieldsArr.map((field) => {
+        return (
+          <InputGroup
+            key={field}
+            name={field}
+            value={formValue[field]}
+            onChange={handleChange}
+            type={type}
+          />
+        );
+      })}
       <ButtonGroup />
     </form>
   );

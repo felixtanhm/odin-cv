@@ -26,28 +26,55 @@ const templateDataold = {
   ],
 };
 
+// const templateData = {
+//   profile: [
+//     {
+//       field: "name",
+//       default: "Felix Tan",
+//       type: "text",
+//       placeholder: "Enter your full name.",
+//     },
+//     {
+//       field: "email",
+//       default: "felixtanhm@gmail.com",
+//       type: "email",
+//       placeholder: "Enter your email.",
+//     },
+//     {
+//       field: "github",
+//       default: "https://www.github.com/felixtanhm",
+//       type: "url",
+//       placeholder: "Enter your github url.",
+//       subtext: "recommended",
+//     },
+//   ],
+// };
+
 const templateData = {
-  profile: [
-    {
-      field: "name",
-      default: "Felix Tan",
+  profile: {
+    name: {
       type: "text",
       placeholder: "Enter your full name.",
+      default: "Felix Tan",
     },
-    {
-      field: "email",
-      default: "felixtanhm@gmail.com",
+    email: {
       type: "email",
-      placeholder: "Enter your email.",
+      placeholder: "Enter your email",
+      default: "felixtanhm@gmail.com",
     },
-    {
-      field: "github",
-      default: "https://www.github.com/felixtanhm",
-      type: "url",
-      placeholder: "Enter your github url.",
-      subtext: "recommended",
+  },
+  work: {
+    title: {
+      type: "text",
+      placeholder: "What is the name of your role?",
+      default: "Software Engineer",
     },
-  ],
+    company: {
+      type: "text",
+      placeholder: "Name of the company you work for.",
+      default: "Google",
+    },
+  },
 };
 
 export default templateData;
