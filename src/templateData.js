@@ -55,24 +55,24 @@ const templateData = {
     name: {
       type: "text",
       placeholder: "Enter your full name.",
-      default: "Felix Tan",
+      default: "",
     },
     email: {
       type: "email",
-      placeholder: "Enter your email",
-      default: "felixtanhm@gmail.com",
+      placeholder: "Enter your email.",
+      default: "",
     },
   },
   work: {
     title: {
       type: "text",
       placeholder: "What is the name of your role?",
-      default: "Software Engineer",
+      default: "",
     },
     company: {
       type: "text",
       placeholder: "Name of the company you work for.",
-      default: "Google",
+      default: "",
     },
   },
 };
