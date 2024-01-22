@@ -1,14 +1,15 @@
 import React from "react";
 import templateData from "../../templateData";
+import utils from "../../utils.js";
 
-function InputGroup({ name, labelText, value, onChange, type }) {
+function InputGroup({ name, value, onChange, type }) {
   const reactId = React.useId();
   const formFields = templateData[type];
 
   return (
     <div className="input-group">
       <label htmlFor={reactId}>
-        <span className="label-text">{name}</span>
+        <span className="label-text">{utils.capitalise(name)}</span>
         {formFields[name]?.subtext && (
           <span className="sub-text">{formFields[name]?.subtext}</span>
         )}

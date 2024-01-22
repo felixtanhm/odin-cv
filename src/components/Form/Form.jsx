@@ -1,15 +1,19 @@
 import React from "react";
 import InputGroup from "../InputGroup";
 import ButtonGroup from "../ButtonGroup";
-
-// {
-//   name: "",
-//   email: "",
-//   github: ""
-// }
+import templateData from "../../templateData";
 
 function Form({ valueObj, type }) {
-  const [formValue, setFormValue] = React.useState(valueObj);
+  const setupData = {};
+  for (const property in templateData[type]) {
+    setupData[property] = templateData[type][property].default;
+  }
+  console.log("Generated Template Data");
+  console.log(setupData);
+
+  const [formValue, setFormValue] = React.useState(
+    valueObj ? valueObj : setupData
+  );
   console.log("Form Rendered with Value: ");
   console.log(formValue);
 
@@ -26,7 +30,7 @@ function Form({ valueObj, type }) {
   }
 
   const fieldsArr = [];
-  for (const property in valueObj) {
+  for (const property in formValue) {
     fieldsArr.push(property);
   }
 
