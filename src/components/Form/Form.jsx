@@ -3,13 +3,13 @@ import InputGroup from "../InputGroup";
 import ButtonGroup from "../ButtonGroup";
 import templateData from "../../templateData";
 
-function Form({ valueObj, type, submitForm }) {
+function Form({ formData, formType, submitForm, toggleForm }) {
   let setupData = {};
-  if (valueObj) {
-    setupData = valueObj;
+  if (formData) {
+    setupData = formData;
   } else {
-    for (const property in templateData[type]) {
-      setupData[property] = templateData[type][property].default;
+    for (const property in templateData[formType]) {
+      setupData[property] = templateData[formType][property].default;
     }
   }
 
@@ -22,10 +22,8 @@ function Form({ valueObj, type, submitForm }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    submitForm(formValue);
-    console.log("Form Submitted: ");
-    console.log(formValue);
-    setFormValue({ name: "", email: "" });
+    submitForm(formValue, formType);
+    toggleForm();
   }
 
   const fieldsArr = [];
@@ -42,7 +40,7 @@ function Form({ valueObj, type, submitForm }) {
             name={field}
             value={formValue[field]}
             onChange={handleChange}
-            type={type}
+            formType={formType}
           />
         );
       })}

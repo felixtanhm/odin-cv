@@ -2,9 +2,9 @@ import React from "react";
 import templateData from "../../templateData";
 import utils from "../../utils.js";
 
-function InputGroup({ name, value, onChange, type }) {
+function InputGroup({ name, value, onChange, formType }) {
   const reactId = React.useId();
-  const formFields = templateData[type];
+  const formFields = templateData[formType];
 
   return (
     <div className="input-group">
@@ -15,7 +15,7 @@ function InputGroup({ name, value, onChange, type }) {
         )}
       </label>
 
-      {type === "textarea" ? (
+      {formFields[name]?.type === "textarea" ? (
         <textarea
           id={reactId}
           name={name}
