@@ -11,8 +11,9 @@ function App() {
   });
   console.log("Work List Array: ");
   console.log(workList);
+
   function toggleForms(formType, formData) {
-    formType
+    formType !== showForm.formType
       ? setShowForm({ formType: formType, formData: formData })
       : setShowForm({ formType: "", formData: null });
   }
@@ -35,9 +36,7 @@ function App() {
             <h2>Profile Details</h2>
             <button
               onClick={() => {
-                showForm.formType
-                  ? toggleForms()
-                  : toggleForms("profile", profile);
+                toggleForms("profile", profile);
               }}
             >
               Edit Profile
@@ -57,7 +56,7 @@ function App() {
             <h2>Work Experience</h2>
             <button
               onClick={() => {
-                showForm.formType ? toggleForms() : toggleForms("work", null);
+                toggleForms("work", null);
               }}
             >
               Add New
