@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "../components/Form";
 import ProfileDisplay from "../components/ProfileDisplay";
+import WorkDisplay from "../components/WorkDisplay";
 
 function App() {
   const [profile, setProfile] = React.useState(null);
@@ -75,6 +76,7 @@ function App() {
       <section id="resume-display">
         <p>Resume display</p>
         {profile && <ProfileDisplay profile={profile} />}
+        {workList.length > 0 && <WorkDisplay workList={workList} />}
       </section>
     </>
   );
