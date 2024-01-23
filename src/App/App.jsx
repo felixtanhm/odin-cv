@@ -10,8 +10,6 @@ function App() {
     formType: "profile",
     formData: null,
   });
-  console.log("Work List Array: ");
-  console.log(workList);
 
   function toggleForms(formType, formData) {
     formType !== showForm.formType
@@ -23,8 +21,6 @@ function App() {
     if (formType === "profile") setProfile(newObj);
     if (formType === "work") {
       const newArr = [...workList, newObj];
-      console.log("Array to set");
-      console.log(newArr);
       setWorkList(newArr);
     }
   }

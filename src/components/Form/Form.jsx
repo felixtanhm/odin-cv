@@ -26,6 +26,7 @@ function Form({ formData, formType, submitForm, toggleForm }) {
     toggleForm();
   }
 
+  // Determine fields to generate in the form
   const fieldsArr = [];
   for (const property in formValue) {
     fieldsArr.push(property);
