@@ -5,9 +5,11 @@ import templateData from "../../templateData";
 
 function Form({ formData, formType, submitForm, toggleForm }) {
   let setupData = {};
+  const reactId = React.useId();
   if (formData) {
     setupData = formData;
   } else {
+    setupData.id = reactId;
     for (const property in templateData[formType]) {
       setupData[property] = templateData[formType][property].default;
     }
@@ -29,7 +31,7 @@ function Form({ formData, formType, submitForm, toggleForm }) {
   // Determine fields to generate in the form
   const fieldsArr = [];
   for (const property in formValue) {
-    fieldsArr.push(property);
+    if (property !== "id") fieldsArr.push(property);
   }
 
   return (

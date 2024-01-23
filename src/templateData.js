@@ -56,6 +56,28 @@ const templateData = {
       default: "",
     },
   },
+  education: {
+    degree: {
+      type: "text",
+      placeholder: "Enter your degree / field of study",
+      default: "",
+    },
+    school: {
+      type: "text",
+      placeholder: "Enter your school / university",
+      default: "",
+    },
+    startDate: {
+      type: "date",
+      placeholder: "",
+      default: "",
+    },
+    endDate: {
+      type: "date",
+      placeholder: "",
+      default: "",
+    },
+  },
 };
 
 export default templateData;
