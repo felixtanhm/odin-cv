@@ -21,14 +21,26 @@ function App() {
       : setShowForm({ formType: "", formData: null });
   }
 
-  function submitForm(newObj, formType) {
-    if (formType === "profile") setProfile(newObj);
+  function submitForm(formValue, formType, isEdit) {
+    if (formType === "profile") setProfile(formValue);
     if (formType === "work") {
-      const newArr = [...workList, newObj];
+      const newArr = isEdit
+        ? workList.map((workItem) => {
+            if (workItem.id === formValue.id) {
+              return formValue;
+            } else return workItem;
+          })
+        : [...workList, formValue];
       setWorkList(newArr);
     }
     if (formType === "education") {
-      const newArr = [...educationList, newObj];
+      const newArr = isEdit
+        ? educationList.map((eduItem) => {
+            if (eduItem.id === formValue.id) {
+              return formValue;
+            } else return eduItem;
+          })
+        : [...educationList, formValue];
       setEducationList(newArr);
     }
   }
@@ -106,6 +118,13 @@ function App() {
               formData={showForm.formData}
               formType={showForm.formType}
               submitForm={submitForm}
+              toggleForm={toggleForms}
+            />
+          )}
+          {educationList.length > 0 && (
+            <FormItemList
+              itemList={educationList}
+              formType="education"
               toggleForm={toggleForms}
             />
           )}

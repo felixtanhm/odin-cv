@@ -24,7 +24,7 @@ function Form({ formData, formType, submitForm, toggleForm }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    submitForm(formValue, formType);
+    submitForm(formValue, formType, !!formData);
     toggleForm();
   }
 
