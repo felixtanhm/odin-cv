@@ -3,7 +3,7 @@ import InputGroup from "../InputGroup";
 import ButtonGroup from "../ButtonGroup";
 import templateData from "../../templateData";
 
-function Form({ formData, formType, submitForm, toggleForm }) {
+function Form({ formData, formType, submitForm, toggleForm, deleteItem }) {
   let setupData = {};
   const reactId = React.useId();
   if (formData) {
@@ -47,7 +47,10 @@ function Form({ formData, formType, submitForm, toggleForm }) {
           />
         );
       })}
-      <ButtonGroup />
+      <ButtonGroup
+        onCancel={toggleForm}
+        onDelete={formData ? deleteItem : undefined}
+      />
     </form>
   );
 }

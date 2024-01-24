@@ -1,0 +1,16 @@
+.btn-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-right {
+}
+
+.btn-del {
+}
+
+.btn-cancel {
+}
+
+.btn-save {
+}

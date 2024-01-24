@@ -45,6 +45,21 @@ function App() {
     }
   }
 
+  function deleteItem(formValue, formType) {
+    if (formType === "work") {
+      const newArr = [...workList].map((item) => {
+        if (item.id !== formValue.id) return item;
+      });
+      setWorkList(newArr);
+    }
+    if (formType === "education") {
+      const newArr = [...educationList].map((item) => {
+        if (item.id !== formValue.id) return item;
+      });
+      setEducationList(newArr);
+    }
+  }
+
   return (
     <>
       <section id="resume-builder">
@@ -92,6 +107,7 @@ function App() {
               formType={showForm.formType}
               submitForm={submitForm}
               toggleForm={toggleForms}
+              deleteItem={deleteItem}
             />
           )}
           {workList.length > 0 && (
@@ -119,6 +135,7 @@ function App() {
               formType={showForm.formType}
               submitForm={submitForm}
               toggleForm={toggleForms}
+              deleteItem={deleteItem}
             />
           )}
           {educationList.length > 0 && (
