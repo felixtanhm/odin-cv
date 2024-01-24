@@ -3,6 +3,8 @@ import Form from "../components/Form";
 import ProfileDisplay from "../components/ProfileDisplay";
 import WorkDisplay from "../components/WorkDisplay";
 import EducationDisplay from "../components/EducationDisplay";
+import FormItem from "../components/FormItem";
+import FormItemList from "../components/FormItemList";
 
 function App() {
   const [profile, setProfile] = React.useState(null);
@@ -53,6 +55,13 @@ function App() {
               toggleForm={toggleForms}
             />
           )}
+          {showForm.formType !== "profile" && (
+            <FormItem
+              formItem={profile}
+              formType="profile"
+              toggleForm={toggleForms}
+            />
+          )}
         </div>
         <div id="work-form">
           <div className="title">
@@ -70,6 +79,13 @@ function App() {
               formData={showForm.formData}
               formType={showForm.formType}
               submitForm={submitForm}
+              toggleForm={toggleForms}
+            />
+          )}
+          {workList.length > 0 && (
+            <FormItemList
+              itemList={workList}
+              formType="work"
               toggleForm={toggleForms}
             />
           )}
