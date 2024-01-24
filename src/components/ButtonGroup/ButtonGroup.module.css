@@ -1,16 +1,30 @@
 .btn-group {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
 .btn-right {
+  display: flex;
+  gap: 8px;
 }
 
 .btn-del {
+  background-color: white;
+  border-color: red;
+  color: red;
+}
+
+.btn-del:hover {
+  background-color: lightpink;
+  border-color: red;
 }
 
 .btn-cancel {
+  background-color: white;
+  color: blue;
 }
 
-.btn-save {
+.btn-cancel:hover {
+  background-color: lightblue;
+  border-color: blue;
 }

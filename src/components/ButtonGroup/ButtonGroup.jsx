@@ -8,15 +8,17 @@ function ButtonGroup({ onCancel, onDelete }) {
           Delete
         </button>
       )}
-      <div className="btn-right">
+      <div className={styles["btn-right"]}>
         {onCancel && (
-          <button type="button" className="btn-cancel" onClick={onCancel}>
+          <button
+            type="button"
+            className={styles["btn-cancel"]}
+            onClick={onCancel}
+          >
             Cancel
           </button>
         )}
-        <button type="submit" className="btn-save">
-          Save
-        </button>
+        <button type="submit">Save</button>
       </div>
     </div>
   );
