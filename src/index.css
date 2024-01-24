@@ -83,8 +83,8 @@ main {
 }
 
 button {
-  background-color: blue;
-  border: 2px solid blue;
+  background-color: #0f766e;
+  border: 2px solid #0f766e;
   border-radius: 4px;
   padding: 4px 8px;
   min-width: 64px;
@@ -93,8 +93,8 @@ button {
 }
 
 button:hover {
-  background-color: darkblue;
-  border-color: darkblue;
+  background-color: #115e59;
+  border-color: #115e59;
 }
 
 .card {

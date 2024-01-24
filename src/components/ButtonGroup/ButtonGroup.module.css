@@ -10,21 +10,21 @@
 
 .btn-del {
   background-color: white;
-  border-color: red;
-  color: red;
+  border-color: #ba1a1a;
+  color: #ba1a1a;
 }
 
 .btn-del:hover {
-  background-color: lightpink;
-  border-color: red;
+  background-color: #ffdad6;
+  border-color: #ba1a1a;
 }
 
 .btn-cancel {
   background-color: white;
-  color: blue;
+  color: #0f766e;
 }
 
 .btn-cancel:hover {
-  background-color: lightblue;
-  border-color: blue;
+  background-color: #f9fafb;
+  border-color: #0f766e;
 }
