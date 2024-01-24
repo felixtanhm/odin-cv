@@ -3,11 +3,17 @@ import styles from "./ButtonGroup.module.css";
 function ButtonGroup({ onCancel, onDelete }) {
   return (
     <div className={styles["btn-group"]}>
-      {onDelete && (
-        <button type="button" className={styles["btn-del"]} onClick={onDelete}>
-          Delete
-        </button>
-      )}
+      <div className={styles["btn-left"]}>
+        {onDelete && (
+          <button
+            type="button"
+            className={styles["btn-del"]}
+            onClick={onDelete}
+          >
+            Delete
+          </button>
+        )}
+      </div>
       <div className={styles["btn-right"]}>
         {onCancel && (
           <button

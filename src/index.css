@@ -103,20 +103,6 @@ button:hover {
   padding: 20px;
 }
 
-.input-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.label-text {
-  font-weight: 600;
-  margin-right: 8px;
-}
-
-.sub-text {
-  font-size: 8px;
-}
-
 #resume-display {
   border: 1px solid black;
   padding: 20px;

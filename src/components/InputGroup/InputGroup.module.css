@@ -1,0 +1,30 @@
+input {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+input:focus {
+  border-color: blue;
+}
+
+textarea {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.label-text {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.sub-text {
+  font-size: 8px;
+}
