@@ -1,0 +1,16 @@
+.contact-details {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 4px;
+  border-bottom: 1px solid black;
+}
+
+span {
+  font-weight: 700;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+}

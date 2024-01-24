@@ -151,7 +151,6 @@ function App() {
         </div>
       </section>
       <section id="resume-display">
-        <p>Resume display</p>
         {profile && <ProfileDisplay profile={profile} />}
         {workList.length > 0 && <WorkDisplay workList={workList} />}
         {educationList.length > 0 && (
