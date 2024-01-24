@@ -11,14 +11,12 @@ function ProfileDisplay({ profile }) {
         )}
         {profile?.github && (
           <p>
-            <span>Github: </span>
-            {profile.github}
+            <a href={profile.github}>Github</a>
           </p>
         )}
-        {profile?.linkedin && (
+        {profile?.linkedIn && (
           <p>
-            <span>LinkedIn: </span>
-            {profile.linkedin}
+            <a href={profile.linkedIn}>LinkedIn</a>
           </p>
         )}
         {profile?.location && (

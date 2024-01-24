@@ -11,7 +11,7 @@ function App() {
   const [workList, setWorkList] = React.useState([]);
   const [educationList, setEducationList] = React.useState([]);
   const [showForm, setShowForm] = React.useState({
-    formType: "profile",
+    formType: "",
     formData: null,
   });
 
@@ -63,16 +63,19 @@ function App() {
   return (
     <>
       <section id="resume-builder">
-        <div id="profile-form">
+        <div id="profile-form" className="section-container">
           <div className="title">
             <h2>Profile Details</h2>
-            <button
-              onClick={() => {
-                toggleForms("profile", profile);
-              }}
-            >
-              Edit Profile
-            </button>
+            {showForm.formType !== "profile" && profile === null && (
+              <button
+                className="btn-canvas"
+                onClick={() => {
+                  toggleForms("profile", profile);
+                }}
+              >
+                Add Profile Details
+              </button>
+            )}
           </div>
           {showForm.formType === "profile" && (
             <Form
@@ -90,7 +93,7 @@ function App() {
             />
           )}
         </div>
-        <div id="work-form">
+        <div id="work-form" className="section-container">
           <div className="title">
             <h2>Work Experience</h2>
             <button
@@ -118,7 +121,7 @@ function App() {
             />
           )}
         </div>
-        <div id="education-form">
+        <div id="education-form" className="section-container">
           <div className="title">
             <h2>Education & Certifications</h2>
             <button

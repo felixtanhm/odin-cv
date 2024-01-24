@@ -6,8 +6,8 @@ function FormItem({ formItem, formType, toggleForm }) {
           <p>{formItem.name}</p>
           <p>{formItem.email}</p>
           <div className="form-item-line">
-            <p>{formItem.github}</p>
-            <p>{formItem.linkedin}</p>
+            <a href={formItem.github}>Github</a>
+            <a href={formItem.linkedIn}>LinkedIn</a>
           </div>
           <p>{formItem.location}</p>
         </div>
