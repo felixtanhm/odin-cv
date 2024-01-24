@@ -55,7 +55,7 @@ function App() {
               toggleForm={toggleForms}
             />
           )}
-          {showForm.formType !== "profile" && (
+          {showForm.formType !== "profile" && profile !== null && (
             <FormItem
               formItem={profile}
               formType="profile"
