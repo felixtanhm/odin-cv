@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 function WorkDisplay({ workList }) {
   return (
     <div>
@@ -6,7 +8,9 @@ function WorkDisplay({ workList }) {
         return (
           <div key={work.id}>
             <p>
-              {work.title}, {work.company} • {work.startDate} -{work.endDate}
+              {work.title}, {work.company} •{" "}
+              {format(work.startDate, "MMM yyyy")} -{" "}
+              {format(work.endDate, "MMM yyyy")}
             </p>
             <p>{work.description}</p>
           </div>

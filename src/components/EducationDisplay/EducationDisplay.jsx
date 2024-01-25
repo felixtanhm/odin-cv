@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 function EducationDisplay({ educationList }) {
   return (
     <div>
@@ -6,7 +8,8 @@ function EducationDisplay({ educationList }) {
         return (
           <div key={edu.id}>
             <p>
-              {edu.school} • {edu.startDate} - {edu.endDate}
+              {edu.school} • {format(edu.startDate, "MMM yyyy")} -{" "}
+              {format(edu.endDate, "MMM yyyy")}
             </p>
             <p>{edu.degree}</p>
           </div>

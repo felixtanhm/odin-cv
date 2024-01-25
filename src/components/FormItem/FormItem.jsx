@@ -1,4 +1,5 @@
 import styles from "./FormItem.module.css";
+import { format } from "date-fns";
 
 function FormItem({ formItem, formType, toggleForm }) {
   if (formType === "profile") {
@@ -35,9 +36,9 @@ function FormItem({ formItem, formType, toggleForm }) {
             <span>{formItem.title + ", " + formItem.company}</span>
           </p>
           <div className={styles["form-item-line"]}>
-            <p>{formItem.startDate}</p>
+            <p>{format(formItem.startDate, "MMM yyyy")}</p>
             {" - "}
-            <p>{formItem.endDate}</p>
+            <p>{format(formItem.endDate, "MMM yyyy")}</p>
           </div>
         </div>
         <button
@@ -60,9 +61,9 @@ function FormItem({ formItem, formType, toggleForm }) {
           </p>
           <p>{formItem.degree}</p>
           <div className={styles["form-item-line"]}>
-            <p>{formItem.startDate}</p>
+            <p>{format(formItem.startDate, "MMM yyyy")}</p>
             {" - "}
-            <p>{formItem.endDate}</p>
+            <p>{format(formItem.endDate, "MMM yyyy")}</p>
           </div>
         </div>
         <button
