@@ -1,18 +1,23 @@
+import styles from "./FormItem.module.css";
+
 function FormItem({ formItem, formType, toggleForm }) {
   if (formType === "profile") {
     return (
-      <div>
+      <div className={styles["form-item"]}>
         <div>
-          <p>{formItem.name}</p>
+          <p>
+            <span>{formItem.name}</span>
+          </p>
           <p>{formItem.email}</p>
-          <div className="form-item-line">
+          <div className={styles["form-item-line"]}>
             <a href={formItem.github}>Github</a>
+            {" • "}
             <a href={formItem.linkedIn}>LinkedIn</a>
           </div>
           <p>{formItem.location}</p>
         </div>
         <button
-          className="btn-edit"
+          className="btn-secondary"
           onClick={() => {
             toggleForm(formType, formItem);
           }}
@@ -24,17 +29,19 @@ function FormItem({ formItem, formType, toggleForm }) {
   }
   if (formType === "work") {
     return (
-      <div>
+      <div className={styles["form-item"]}>
         <div>
-          <p>{formItem.title}</p>
-          <p>{formItem.company}</p>
-          <div className="form-item-line">
+          <p>
+            <span>{formItem.title + ", " + formItem.company}</span>
+          </p>
+          <div className={styles["form-item-line"]}>
             <p>{formItem.startDate}</p>
+            {" - "}
             <p>{formItem.endDate}</p>
           </div>
         </div>
         <button
-          className="btn-edit"
+          className="btn-secondary"
           onClick={() => {
             toggleForm(formType, formItem);
           }}
@@ -46,17 +53,20 @@ function FormItem({ formItem, formType, toggleForm }) {
   }
   if (formType === "education") {
     return (
-      <div>
+      <div className={styles["form-item"]}>
         <div>
-          <p>{formItem.school}</p>
+          <p>
+            <span>{formItem.school}</span>
+          </p>
           <p>{formItem.degree}</p>
-          <div className="form-item-line">
+          <div className={styles["form-item-line"]}>
             <p>{formItem.startDate}</p>
+            {" - "}
             <p>{formItem.endDate}</p>
           </div>
         </div>
         <button
-          className="btn-edit"
+          className="btn-secondary"
           onClick={() => {
             toggleForm(formType, formItem);
           }}

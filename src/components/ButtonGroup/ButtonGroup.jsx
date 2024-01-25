@@ -16,11 +16,7 @@ function ButtonGroup({ onCancel, onDelete }) {
       </div>
       <div className={styles["btn-right"]}>
         {onCancel && (
-          <button
-            type="button"
-            className={styles["btn-cancel"]}
-            onClick={onCancel}
-          >
+          <button type="button" className="btn-secondary" onClick={onCancel}>
             Cancel
           </button>
         )}

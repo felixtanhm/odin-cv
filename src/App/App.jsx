@@ -64,7 +64,7 @@ function App() {
     <>
       <section id="resume-builder">
         <div id="profile-form" className="section-container">
-          <div className="title">
+          <div>
             <h2>Profile Details</h2>
             {showForm.formType !== "profile" && profile === null && (
               <button
@@ -96,13 +96,15 @@ function App() {
         <div id="work-form" className="section-container">
           <div className="title">
             <h2>Work Experience</h2>
-            <button
-              onClick={() => {
-                toggleForms("work", null);
-              }}
-            >
-              Add New
-            </button>
+            {showForm.formType !== "work" && (
+              <button
+                onClick={() => {
+                  toggleForms("work", null);
+                }}
+              >
+                Add New
+              </button>
+            )}
           </div>
           {showForm.formType === "work" && (
             <Form
@@ -124,13 +126,15 @@ function App() {
         <div id="education-form" className="section-container">
           <div className="title">
             <h2>Education & Certifications</h2>
-            <button
-              onClick={() => {
-                toggleForms("education", null);
-              }}
-            >
-              Add New
-            </button>
+            {showForm.formType !== "education" && (
+              <button
+                onClick={() => {
+                  toggleForms("education", null);
+                }}
+              >
+                Add New
+              </button>
+            )}
           </div>
           {showForm.formType === "education" && (
             <Form

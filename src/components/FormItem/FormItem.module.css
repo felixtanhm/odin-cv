@@ -1,0 +1,15 @@
+.form-item {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  padding: 16px 0;
+}
+
+.form-item-line {
+  display: flex;
+  gap: 4px;
+}
+
+span {
+  font-weight: 700;
+}
