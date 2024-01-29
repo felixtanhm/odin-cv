@@ -34,9 +34,26 @@ function Form({ formData, formType, submitForm, toggleForm, deleteItem }) {
     if (property !== "id") fieldsArr.push(property);
   }
 
+  const firstInput = React.useRef();
+
+  React.useEffect(() => {
+    firstInput.current.focus();
+  }, []);
+
   return (
     <form onSubmit={handleSubmit}>
-      {fieldsArr.map((field) => {
+      {fieldsArr.map((field, index) => {
+        if (index === 0)
+          return (
+            <InputGroup
+              key={field}
+              ref={firstInput}
+              name={field}
+              value={formValue[field]}
+              onChange={handleChange}
+              formType={formType}
+            />
+          );
         return (
           <InputGroup
             key={field}

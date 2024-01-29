@@ -3,7 +3,7 @@ import templateData from "../../templateData";
 import utils from "../../utils.js";
 import styles from "./InputGroup.module.css";
 
-function InputGroup({ name, value, onChange, formType }) {
+function InputGroup({ name, value, onChange, formType }, ref) {
   const reactId = React.useId();
   const formFields = templateData[formType];
 
@@ -21,6 +21,7 @@ function InputGroup({ name, value, onChange, formType }) {
       {formFields[name]?.type === "textarea" ? (
         <textarea
           id={reactId}
+          ref={ref}
           name={name}
           placeholder={formFields[name].placeholder}
           value={value}
@@ -29,6 +30,7 @@ function InputGroup({ name, value, onChange, formType }) {
       ) : (
         <input
           id={reactId}
+          ref={ref}
           name={name}
           placeholder={formFields[name].placeholder}
           value={value}
@@ -40,4 +42,4 @@ function InputGroup({ name, value, onChange, formType }) {
   );
 }
 
-export default InputGroup;
+export default React.forwardRef(InputGroup);
