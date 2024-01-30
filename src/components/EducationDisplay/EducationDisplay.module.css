@@ -1,0 +1,16 @@
+.display-title {
+  margin-bottom: 12px;
+  border-bottom: 1px solid black;
+}
+
+.edu-container {
+  margin-bottom: 8px;
+}
+
+.edu-title {
+  font-weight: 600;
+}
+
+.edu-description {
+  white-space: pre-wrap;
+}

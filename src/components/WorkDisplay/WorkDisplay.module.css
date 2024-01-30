@@ -1,0 +1,16 @@
+.display-title {
+  margin-bottom: 12px;
+  border-bottom: 1px solid black;
+}
+
+.work-container {
+  margin-bottom: 8px;
+}
+
+.work-title {
+  font-weight: 600;
+}
+
+.work-description {
+  white-space: pre-wrap;
+}
