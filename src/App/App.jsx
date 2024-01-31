@@ -14,7 +14,6 @@ function App() {
     formType: "",
     formData: null,
   });
-  console.log(workList);
   function toggleForms(formType, formData) {
     formType !== showForm.formType
       ? setShowForm({ formType: formType, formData: formData })

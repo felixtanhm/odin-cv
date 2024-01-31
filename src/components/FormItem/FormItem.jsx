@@ -10,12 +10,16 @@ function FormItem({ formItem, formType, toggleForm }) {
             <span>{formItem.name}</span>
           </p>
           <p>{formItem.email}</p>
-          <div className={styles["form-item-line"]}>
-            <a href={formItem.github}>Github</a>
-            {" • "}
-            <a href={formItem.linkedIn}>LinkedIn</a>
-          </div>
-          <p>{formItem.location}</p>
+          {(formItem?.github || formItem?.linkedIn) && (
+            <div className={styles["form-item-line"]}>
+              {formItem?.github && <a href={formItem.github}>Github</a>}
+              {formItem?.linkedIn && (
+                <a href={formItem.linkedIn}>{" • "}LinkedIn</a>
+              )}
+            </div>
+          )}
+
+          {formItem?.location && <p>{formItem.location}</p>}
         </div>
         <button
           className="btn-secondary"
@@ -38,7 +42,11 @@ function FormItem({ formItem, formType, toggleForm }) {
           <div className={styles["form-item-line"]}>
             <p>{format(formItem.startDate, "MMM yyyy")}</p>
             {" - "}
-            <p>{format(formItem.endDate, "MMM yyyy")}</p>
+            <p>
+              {formItem?.endDate
+                ? format(formItem.endDate, "MMM yyyy")
+                : "Present"}
+            </p>
           </div>
         </div>
         <button
@@ -63,7 +71,11 @@ function FormItem({ formItem, formType, toggleForm }) {
           <div className={styles["form-item-line"]}>
             <p>{format(formItem.startDate, "MMM yyyy")}</p>
             {" - "}
-            <p>{format(formItem.endDate, "MMM yyyy")}</p>
+            <p>
+              {formItem?.endDate
+                ? format(formItem.endDate, "MMM yyyy")
+                : "Present"}
+            </p>
           </div>
         </div>
         <button

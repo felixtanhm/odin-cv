@@ -4,11 +4,13 @@ const templateData = {
       type: "text",
       placeholder: "Enter your full name.",
       default: "",
+      required: true,
     },
     email: {
       type: "email",
       placeholder: "Enter your email.",
       default: "",
+      required: true,
     },
     github: {
       type: "url",
@@ -34,21 +36,25 @@ const templateData = {
       type: "text",
       placeholder: "What is the name of your role?",
       default: "",
+      required: true,
     },
     company: {
       type: "text",
       placeholder: "Name of the company you work for.",
       default: "",
+      required: true,
     },
     description: {
       type: "textarea",
       placeholder: "Describe your roles and responsibilities",
       default: "",
+      required: true,
     },
     startDate: {
       type: "date",
       placeholder: "",
       default: "",
+      required: true,
     },
     endDate: {
       type: "date",
@@ -61,16 +67,19 @@ const templateData = {
       type: "text",
       placeholder: "Enter your degree / field of study",
       default: "",
+      required: true,
     },
     school: {
       type: "text",
       placeholder: "Enter your school / university",
       default: "",
+      required: true,
     },
     startDate: {
       type: "date",
       placeholder: "",
       default: "",
+      required: true,
     },
     endDate: {
       type: "date",

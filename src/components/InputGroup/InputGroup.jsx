@@ -26,6 +26,7 @@ function InputGroup({ name, value, onChange, formType }, ref) {
           placeholder={formFields[name].placeholder}
           value={value}
           onChange={onChange}
+          required={formFields[name].required}
         ></textarea>
       ) : (
         <input
@@ -36,6 +37,7 @@ function InputGroup({ name, value, onChange, formType }, ref) {
           value={value}
           onChange={onChange}
           type={formFields[name].type}
+          required={formFields[name].required}
         />
       )}
     </div>

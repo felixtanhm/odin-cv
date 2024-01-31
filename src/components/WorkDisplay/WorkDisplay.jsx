@@ -11,7 +11,7 @@ function WorkDisplay({ workList }) {
             <p className={styles["work-title"]}>
               {work.title}, {work.company} •{" "}
               {format(work.startDate, "MMM yyyy")} -{" "}
-              {format(work.endDate, "MMM yyyy")}
+              {work?.endDate ? format(work.endDate, "MMM yyyy") : "Present"}
             </p>
             <p className={styles["work-description"]}>{work.description}</p>
           </div>
