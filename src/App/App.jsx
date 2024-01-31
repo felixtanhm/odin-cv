@@ -14,7 +14,7 @@ function App() {
     formType: "",
     formData: null,
   });
-
+  console.log(workList);
   function toggleForms(formType, formData) {
     formType !== showForm.formType
       ? setShowForm({ formType: formType, formData: formData })
@@ -47,16 +47,22 @@ function App() {
 
   function deleteItem(formValue, formType) {
     if (formType === "work") {
-      const newArr = [...workList].map((item) => {
-        if (item.id !== formValue.id) return item;
-      });
+      const newArr = [...workList]
+        .map((item) => {
+          if (item.id !== formValue.id) return item;
+        })
+        .filter(Boolean);
       setWorkList(newArr);
+      toggleForms();
     }
     if (formType === "education") {
-      const newArr = [...educationList].map((item) => {
-        if (item.id !== formValue.id) return item;
-      });
+      const newArr = [...educationList]
+        .map((item) => {
+          if (item.id !== formValue.id) return item;
+        })
+        .filter(Boolean);
       setEducationList(newArr);
+      toggleForms();
     }
   }
 

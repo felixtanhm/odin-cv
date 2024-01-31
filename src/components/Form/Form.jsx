@@ -66,7 +66,13 @@ function Form({ formData, formType, submitForm, toggleForm, deleteItem }) {
       })}
       <ButtonGroup
         onCancel={toggleForm}
-        onDelete={formData ? deleteItem : undefined}
+        onDelete={
+          formData
+            ? () => {
+                deleteItem(formValue, formType);
+              }
+            : undefined
+        }
       />
     </form>
   );
