@@ -10,3 +10,5 @@ Possible Features:
 - Email CV
 - Include additional sections
 - CV Design customisation
+- CV Display Empty State implementation
+- Save CV to local storage
